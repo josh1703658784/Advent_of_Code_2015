@@ -1,0 +1,27 @@
+-- Haskell Playground 1.0
+-- *************************************
+--NOT FUNCTIONING **********************
+-- *************************************
+
+import Data.List
+
+isInfixOf "hello" "hellohowareyou"
+
+
+
+--map (`isInfixOf` "huup") "[aeiou].*[aeiou].*[aeiou]"
+
+--map (`isInfixOf` "hsup") ["a", "e", "i", "o", "u"]
+
+--elem 'a' ['a'..'z']
+
+
+--elem
+--elem
+
+--map (elem "the_string") [['a', 'e']
+
+
+-- *************************************
+--NOT FUNCTIONING **********************
+-- *************************************

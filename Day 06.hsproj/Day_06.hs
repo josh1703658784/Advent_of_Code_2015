@@ -1,5 +1,6 @@
 import Data.List.Split
-import qualified Data.Vector as V
+--import qualified Data.Vector as V
+import qualified Data.Vector.Unboxed as V
 
 
 main = do   
@@ -14,6 +15,9 @@ le_grid = (replicate 1000 (replicate 1000 True))
 
 
 grid_width = 1000
+
+vector :: V.Vector Int
+vector = V.fromList le_grid
 
 --
 --run_show' :: [[Bool]] -> [(Int, (Int, Int), (Int, Int))] -> [[Bool]]
