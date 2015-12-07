@@ -1,0 +1,26 @@
+-- Haskell Playground 1.0
+import qualified Data.Vector as V
+
+
+
+
+V.fromList [1..10] :: Data.Vector.Vector
+
+
+--main
+
+let test = replicate 3 (replicate 3 True)
+
+test!!0
+length test
+
+--filter (\b -> b==True) test
+length (map (filter (\b -> True)) test)
+
+
+let t = [[True, False], [False, False]]
+map (filter (\b -> True)) t
+--filter (>2) t
+
+
+filter

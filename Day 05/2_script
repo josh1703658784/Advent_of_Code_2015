@@ -1,0 +1,5 @@
+INPUT='input'
+TEST_INPUT='test_input_02'
+
+cat $INPUT | grep "\(.\)\(.\).*\1\2" | grep "\(.\)[a-z]\1" | wc -l
+
