@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#FILE="input.txt"
+FILE="test.txt"
+
+
+
+
+MOD=$(cat $FILE | sed 's/^[ \t]*//;s/[ \t]*$//')
+echo $MOD
+
+ALL=$(cat $MOD | wc -m)
+
+
+DOUBLE_BACK='\\'
+BACK_QUOTE='\"'
+BACK_X='\x'
+
+#echo "string length: ${#FILE}"
+# cat $FILE | grep "$DOUBLE_BACK\|$BACK_QUOTE\|$BACK_X "
+# cat $FILE | sed s/$DOUBLE_BACK/"¡¡"/g | sed -e s/$BACK_X/"¡¡"/g | sed -e s/$BACK_X/"¡¡"/g | grep -o -v ¡ | wc -m
+SOME=$(cat $FILE | sed s/$BACK_X/"a"/g | grep -o [a-z]| wc -l)
+# cat $FILE | sed /$DOUBLE_BACK/d | sed /$BACK_QUOTE/d | sed /$BACK_X/d 
+
+RESULT=$(expr $ALL - $SOME)
+
+echo "ALL    " $ALL
+echo "SOME   " $SOME
+echo "RESULT " $RESULT

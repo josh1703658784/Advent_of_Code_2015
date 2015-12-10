@@ -16,7 +16,7 @@ description:
 category:
 author:
 tested-with:
-data-files: input
+data-files: input.txt
 data-dir: ""
 extra-source-files:
 extra-tmp-files:

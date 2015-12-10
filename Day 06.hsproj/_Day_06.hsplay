@@ -1,12 +1,21 @@
 -- Haskell Playground 1.0
-import qualified Data.Array.Repa as R
-
---R.toList
---V.fromList [1..10] :: Data.Vector.Vector
 
 
---main
+main
 
+filter (==True) [False, True]
 
-let inputs = [1..10] :: [Double]
-let x = R.fromListUnboxed (Z :. (10::Int)) inputs
+let g = [1,2,3,4,5,6,7,8,9,10]
+let f = [[1,2],
+         [3,4],
+         [5,6],
+         [7,8],
+         [9,10]]
+
+f!!3!!0
+
+let lights_grid = replicate 1000000 False
+
+lights_grid!!999999
+
+[1..78]
