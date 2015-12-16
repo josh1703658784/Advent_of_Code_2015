@@ -4,30 +4,28 @@ import Control.Applicative
 import Control.Monad.Identity (Identity)
 import Data.List.Split
 
-time=2503
+--time=2503 :: Int
+time=1000 :: Int
 --FORMAT: (name, distance, travel_time, rest_time)
-
+--SOLUTION: 2696
 main = do   
-    c <- readFile "input.txt"
+    c <- readFile "test_input.txt"
     if null c 
         then return ()  
         else do  
-          putStr $ show (maximum (calc_all_d (parse c)))
+          putStr $ show ( (calc_all_d (parse c)))
 
 
 calc_all_d :: [(String, Int, Int, Int)] -> [Int]
 calc_all_d xs = map (calc_d) xs
 
-
 calc_d :: (String, Int, Int, Int) -> Int
-calc_d (n,d,f,r) = d*(fly_time (big_time (zip r_l s_l)))
-                  where r_l = running_list f r
-                        s_l = sum_list r_l
-                        big_time xs = fst (last (valid_time xs)) 
-                        valid_time = takeWhile (\x -> snd x <= time) 
-                        fly_time xs = sum (filter (==f) xs)
-
-
+calc_d (n,d,f,r) = (p1_t + p2_t)*d
+                  where dr = fromIntegral(r) :: Double
+                        df = fromIntegral(f) :: Double
+                        dtime = fromIntegral(time) :: Double
+                        p1_t = floor ((df/(dr+df))*dtime) :: Int
+                        p2_t = f - (p1_t `mod` f)
 
 sum_list :: [[Int]] -> [Int]
 sum_list xss = map (sum) xss
