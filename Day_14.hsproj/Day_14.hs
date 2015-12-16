@@ -9,7 +9,7 @@ time=2503
 
 main = do   
     c <- readFile "input.txt"
-    if null c  i
+    if null c 
         then return ()  
         else do  
           putStr $ show (maximum (calc_all_d (parse c)))
@@ -18,7 +18,6 @@ main = do
 calc_all_d :: [(String, Int, Int, Int)] -> [Int]
 calc_all_d xs = map (calc_d) xs
 
-           
 
 calc_d :: (String, Int, Int, Int) -> Int
 calc_d (n,d,f,r) = d*(fly_time (big_time (zip r_l s_l)))
@@ -41,6 +40,11 @@ running_list f r = (foldl (combo) [[]] (take 1000 l))
 
 list_d :: Int -> Int -> [Int]
 list_d x y = x:(list_d y x)
+
+
+
+
+
 
 parse :: String -> [(String, Int, Int, Int)]
 parse c = p_data (p_spaces (p_lines c))
